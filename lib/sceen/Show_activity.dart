@@ -332,7 +332,7 @@ class _Show_activityState extends State<Show_activity> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://chiangraismartfarm.com/APIsmartfarm/deleteactivity.php?isAdd=true&activity_id=${farmModel.activity_id}';
+                              'http://localhost/api_smartfarm-new/deleteactivity.php?isAdd=true&activity_id=${farmModel.activity_id}';
                           print(farmModel.activity_id);
                           await Dio().get(url);
                           getfarm();
@@ -403,7 +403,7 @@ class _Show_activityState extends State<Show_activity> {
     print(activityModel);
     SharedPreferences preferences = await SharedPreferences.getInstance();
        farm_id = preferences.getString('farm_id');
-    String? url = 'http://chiangraismartfarm.com/APIsmartfarm/getactivity.php?isAdd=true&farm_id=${farm_id}';
+    String? url = 'http://localhost/api_smartfarm-new/getactivity.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     //print('response==>$response');

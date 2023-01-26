@@ -53,7 +53,7 @@ class _activity extends State<activity> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     farm_id = preferences.getString('farm_id');
     String? url =
-        'http://chiangraismartfarm.com/APIsmartfarm/getCrop.php?isAdd=true&farm_id=${farm_id}';
+        'http://localhost/api_smartfarm-new/getCrop.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     print('===>$response');
     var result = json.decode(response.data);
@@ -92,7 +92,7 @@ class _activity extends State<activity> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     farm_id = preferences.getString('farm_id');
     String? url =
-        'http://chiangraismartfarm.com/APIsmartfarm/getdiesease.php?isAdd=true&farm_id=${farm_id}';
+        'http://localhost/api_smartfarm-new/getdiesease.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     print('responsegh_id==>$response');
@@ -129,7 +129,7 @@ class _activity extends State<activity> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     farm_id = preferences.getString('farm_id');
     String? url =
-        'http://chiangraismartfarm.com/APIsmartfarm/getbug.php?isAdd=true&farm_id=${farm_id}';
+        'http://localhost/api_smartfarm-new/getbug.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     print('responsebug==>$response');
@@ -286,7 +286,7 @@ class _activity extends State<activity> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_activity.php?isAdd=true&crop_id=$dropdownvalue&work_date=$valuedate&work_detail=$work_detail&problem=$problem&cost=$cost&diesease_id=$dropdownvaluediesease&bug_id=$dropdownvaluebug&solve_by=$solve_by&activity_id=$activity_id&farm_id=$farm_id';
+        'http://localhost/api_smartfarm-new/insert_activity.php?isAdd=true&crop_id=$dropdownvalue&work_date=$valuedate&work_detail=$work_detail&problem=$problem&cost=$cost&diesease_id=$dropdownvaluediesease&bug_id=$dropdownvaluebug&solve_by=$solve_by&activity_id=$activity_id&farm_id=$farm_id';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

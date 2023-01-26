@@ -171,7 +171,7 @@ class _edit_cropState extends State<edit_crop> {
   Future<Null> getdata_by_id() async {
     cropModel.clear();
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    String url = 'http://chiangraismartfarm.com/APIsmartfarm/GetEditCrop.php?crop_id=${data_ID}&isAdd=item';
+    String url = 'http://localhost/api_smartfarm-new/GetEditCrop.php?crop_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -187,7 +187,7 @@ class _edit_cropState extends State<edit_crop> {
   Future<Null> editdata() async {
     final farm_id = edit2.text, plant_id = edit3.text, crop_date = edit4.text, gh_id = edit6.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_crop.php?isAdd=true&crop_id=$data_ID&farm_id=$farm_id&plant_id=$plant_id&crop_date=$crop_date&gh_id=$gh_id';
+        'http://localhost/api_smartfarm-new/edit_crop.php?isAdd=true&crop_id=$data_ID&farm_id=$farm_id&plant_id=$plant_id&crop_date=$crop_date&gh_id=$gh_id';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

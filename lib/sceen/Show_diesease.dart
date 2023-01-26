@@ -193,7 +193,7 @@ class _Show_diesease extends State<Show_diesease> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://chiangraismartfarm.com/APIsmartfarm/deletediesease.php?isAdd=true&farm_id=${greehouseModel.farm_id}';
+                              'http://localhost/api_smartfarm-new/?isAdd=true&farm_id=${greehouseModel.farm_id}';
                           print(greehouseModel.diesease_id);
                           await Dio().get(url);
                           getgreenhouse();
@@ -262,7 +262,7 @@ class _Show_diesease extends State<Show_diesease> {
     print(dieseaseModel);
     SharedPreferences preferences = await SharedPreferences.getInstance();
     farm_id = preferences.getString('farm_id');
-    String? url = 'http://chiangraismartfarm.com/APIsmartfarm/getdiesease.php?isAdd=true&farm_id=${farm_id}';
+    String? url = 'http://localhost/api_smartfarm-new/getdiesease.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     print('response==>$response');

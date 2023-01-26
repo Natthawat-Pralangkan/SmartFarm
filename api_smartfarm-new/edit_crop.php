@@ -8,9 +8,8 @@ if (isset($_GET)) {
         $crop_id = $_REQUEST['crop_id'];
         $plant_id = $_REQUEST['plant_id'];
         $crop_date = $_REQUEST['crop_date'];
-        $gh_id = $_REQUEST['gh_id'];
 
-        $sql = "UPDATE tb_crop SET farm_id = '$farm_id',plant_id = '$plant_id' , crop_date = '$crop_date', gh_id = '$gh_id' WHERE crop_id = '$crop_id'";
+        $sql = "UPDATE tb_crop SET farm_id = '$farm_id',plant_id = '$plant_id' , crop_date = '$crop_date' WHERE crop_id = '$crop_id'";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             echo "true";

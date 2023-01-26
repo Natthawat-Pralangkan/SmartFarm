@@ -214,7 +214,7 @@ class _Show_greenhouseState extends State<Show_greenhouse> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://chiangraismartfarm.com/APIsmartfarm/deleteGreenHouse.php?isAdd=true&gh_id=${greehouseModel.gh_id}';
+                              'http://localhost/api_smartfarm-new/deleteGreenHouse.php?isAdd=true&gh_id=${greehouseModel.gh_id}';
                           print(greehouseModel.gh_id);
                           await Dio().get(url);
                           getgreenhouse();
@@ -273,7 +273,7 @@ class _Show_greenhouseState extends State<Show_greenhouse> {
     print(greehouseModel);
     SharedPreferences preferences = await SharedPreferences.getInstance();
       farm_id = preferences.getString('farm_id');
-    String? url = 'http://chiangraismartfarm.com/APIsmartfarm/getGreenhouse.php?isAdd=true&farm_id=${farm_id}';
+    String? url = 'http://localhost/api_smartfarm-new/getGreenhouse.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     print('response==>$response');

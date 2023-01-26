@@ -160,7 +160,7 @@ class _edit_crop_closeState extends State<edit_crop_close> {
     close_CropModel.clear();
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/GetEditCloseCrop.php?crop_id=${data_ID}&isAdd=item';
+        'http://localhost/api_smartfarm-new/GetEditCloseCrop.php?crop_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -175,7 +175,7 @@ class _edit_crop_closeState extends State<edit_crop_close> {
   Future<Null> editdata() async {
     final close_date = edit2.text, amount = edit3.text, cost = edit4.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_CloseCrop.php?isAdd=true&crop_id=$data_ID&close_date=$close_date&amount=$amount&cost=$cost';
+        'http://localhost/api_smartfarm-new/edit_CloseCrop.php?isAdd=true&crop_id=$data_ID&close_date=$close_date&amount=$amount&cost=$cost';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

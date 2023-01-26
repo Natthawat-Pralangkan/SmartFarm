@@ -124,7 +124,7 @@ class _SignupState extends State<Signup> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://localhost/api1/register.php?isAdd=true&user_id=$user_id&name=$name&email=$email&phonenumber=$phonenumber&password=$password';
+        'http://localhost/api_smartfarm-new/register.php?isAdd=true&user_id=$user_id&name=$name&email=$email&phonenumber=$phonenumber&password=$password';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

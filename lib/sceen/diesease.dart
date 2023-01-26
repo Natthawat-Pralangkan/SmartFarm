@@ -92,7 +92,7 @@ class _diesease extends State<diesease> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_diesease.php?isAdd=true&diesease_id=$diesease_id&diesease_name=$diesease_name&farm_id=$farm_id';
+        'http://localhost/api_smartfarm-new/insert_diesease.php?isAdd=true&diesease_id=$diesease_id&diesease_name=$diesease_name&farm_id=$farm_id';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

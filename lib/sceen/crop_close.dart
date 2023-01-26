@@ -42,7 +42,7 @@ class _crop_close extends State<crop_close> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     farm_id = preferences.getString('farm_id');
     String? url =
-        'http://chiangraismartfarm.com/APIsmartfarm/getCrop.php?isAdd=true&farm_id=${farm_id}';
+        'http://localhost/api_smartfarm-new/getCrop.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     print('===>$response');
     var result = json.decode(response.data);
@@ -168,7 +168,7 @@ class _crop_close extends State<crop_close> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_crop_close.php?isAdd=true&&close_date=$valuedate&amount=$amount&cost=$cost&crop_id=$dropdownvalue&farm_id=$farm_id';
+        'http://localhost/api_smartfarm-new/insert_crop_close.php?isAdd=true&&close_date=$valuedate&amount=$amount&cost=$cost&crop_id=$dropdownvalue&farm_id=$farm_id';
     try {
       Response response = await Dio().get(url);
       print(response.statusCode);

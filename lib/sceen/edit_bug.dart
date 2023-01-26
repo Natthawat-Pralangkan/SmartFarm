@@ -152,7 +152,7 @@ class _edit_bug extends State<edit_bug> {
   Future<Null> getdata_by_id() async {
     BugModels.clear();
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    String url = 'http://chiangraismartfarm.com/APIsmartfarm/GetEditbug.php?bug_id=${data_ID}&isAdd=item';
+    String url = 'http://localhost/api_smartfarm-new/GetEditbug.php?bug_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -165,7 +165,7 @@ class _edit_bug extends State<edit_bug> {
   Future<Null> editdata() async {
     final bug_name = edit2.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_bug.php?isAdd=true&bug_id=$data_ID&bug_name=$bug_name';
+        'http://localhost/api_smartfarm-new/edit_bug.php?isAdd=true&bug_id=$data_ID&bug_name=$bug_name';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

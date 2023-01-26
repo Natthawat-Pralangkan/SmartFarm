@@ -101,7 +101,7 @@ class _greenhouse extends State<greenhouse> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_greenhouse.php?isAdd=true&farm_id=$farm_id&gh_id=$gh_id&gh_name=$gh_name&gh_status=$gh_status';
+        'http://localhost/api_smartfarm-new/insert_greenhouse.php?isAdd=true&farm_id=$farm_id&gh_id=$gh_id&gh_name=$gh_name&gh_status=$gh_status';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

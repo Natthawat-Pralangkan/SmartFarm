@@ -143,7 +143,7 @@ class _edit_farmState extends State<edit_farm> {
     Model.clear();
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String url =
-        'http://localhost//api1/getFarm.php?isAdd=item&farm_id=$data_ID';
+        'http://localhost/api_smartfarm-new/getFarm.php?isAdd=item&farm_id=$data_ID';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -157,7 +157,7 @@ class _edit_farmState extends State<edit_farm> {
   Future<Null> editdata() async {
     final name = edit2.text, lat = edit3.text, lng = edit4.text;
     String url =
-        'http://localhost//api1/edit_farm.php?isAdd=true&farm_id=$data_ID&farm_name=$name&lat=$lat&lng=$lng';
+        'http://localhost/api_smartfarm-new/edit_farm.php?isAdd=true&farm_id=$data_ID&farm_name=$name&lat=$lat&lng=$lng';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

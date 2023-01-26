@@ -186,7 +186,7 @@ class _plant extends State<plant> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_plant.php?isAdd=true&farm_id=$farm_id&plant_id=$plant_id&plant_name=$plant_name&age=$age&ph=$ph&temp_max=$temp_max&temp_min=$temp_min';
+        'http://localhost/api_smartfarm-new/insert_plant.php?isAdd=true&farm_id=$farm_id&plant_id=$plant_id&plant_name=$plant_name&age=$age&ph=$ph&temp_max=$temp_max&temp_min=$temp_min';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

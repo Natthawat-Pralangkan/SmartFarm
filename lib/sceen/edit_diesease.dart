@@ -155,7 +155,7 @@ class _edit_diesease extends State<edit_diesease> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 
     String url =
-        'http://chiangraismartfarm.com//APIsmartfarm/GetEditdiesease.php?diesease_id=${data_ID}&isAdd=item';
+        'http://localhost/api_smartfarm-new/GetEditdiesease.php?diesease_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -168,7 +168,7 @@ class _edit_diesease extends State<edit_diesease> {
   Future<Null> editdata() async {
     final diesease_name = edit2.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_diesease.php?isAdd=true&diesease_id=$data_ID&diesease_name=$diesease_name';
+        'http://localhost/api_smartfarm-new/edit_diesease.php?isAdd=true&diesease_id=$data_ID&diesease_name=$diesease_name';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

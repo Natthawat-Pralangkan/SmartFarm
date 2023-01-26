@@ -194,7 +194,7 @@ class _Show_bug extends State<Show_bug> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://chiangraismartfarm.com/APIsmartfarm/deletebug.php?isAdd=true&bug_id=${bugModel.bug_id }';
+                              'http://localhost/api_smartfarm-new/deletebug.php?isAdd=true&bug_id=${bugModel.bug_id }';
                           print(bugModel.bug_id );
                           await Dio().get(url);
                           getgreenhouse();
@@ -263,7 +263,7 @@ class _Show_bug extends State<Show_bug> {
     print(BugModels);
     SharedPreferences preferences = await SharedPreferences.getInstance();
      farm_id = preferences.getString('farm_id');
-    String? url = 'http://chiangraismartfarm.com/APIsmartfarm/getbug.php?isAdd=true&farm_id=${farm_id}';
+    String? url = 'http://localhost/api_smartfarm-new/getbug.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     print('response==>$response');

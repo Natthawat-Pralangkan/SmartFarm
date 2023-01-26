@@ -256,7 +256,7 @@ class _Show_cropState extends State<Show_crop> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://chiangraismartfarm.com/APIsmartfarm/deleteCrop.php?isAdd=true&crop_id=${cropModel.crop_id}';
+                              'http://localhost/api_smartfarm-new/deleteCrop.php?isAdd=true&crop_id=${cropModel.crop_id}';
                           print(cropModel.farm_id);
                           await Dio().get(url);
                           getcrop();
@@ -325,7 +325,7 @@ class _Show_cropState extends State<Show_crop> {
     print(cropModel);
     SharedPreferences preferences = await SharedPreferences.getInstance();
       farm_id = preferences.getString('farm_id');
-    String? url = 'http://chiangraismartfarm.com/APIsmartfarm/getCrop.php?isAdd=true&farm_id=${farm_id}';
+    String? url = 'http://localhost/api_smartfarm-new/getCrop.php?isAdd=true&farm_id=${farm_id}';
     Response response = await Dio().get(url);
     print('===>$response');
     var result = json.decode(response.data);

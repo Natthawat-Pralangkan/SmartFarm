@@ -119,7 +119,7 @@ class _SigninState extends State<Signin> {
 
   Future<Null> checkAuthen() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/login.php?isAdd=true&email=$email&password=$password';
+        'http://localhost/api_smartfarm-new/login.php?isAdd=true&email=$email&password=$password';
     try {
       //print('OK TRY');
       Response response = await Dio().get(url);

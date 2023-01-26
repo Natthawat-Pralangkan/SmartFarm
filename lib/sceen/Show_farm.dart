@@ -349,7 +349,7 @@ class _Show_farmState extends State<Show_farm> {
                     ElevatedButton.icon(
                         onPressed: () async {
                           String url =
-                              'http://localhost/api1/deleteFarm.php?isAdd=true&farm_id=${farmModel.farm_id}';
+                              'http://localhost/api_smartfarm-new/deleteFarm.php?isAdd=true&farm_id=${farmModel.farm_id}';
                           print(farmModel.farm_id);
                           await Dio().get(url);
                           getfarm();
@@ -419,7 +419,7 @@ class _Show_farmState extends State<Show_farm> {
     farmModel.clear();
     print(farmModel);
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    String? url = 'http://localhost/api1/getFarm.php?isAdd=true';
+    String? url = 'http://localhost/api_smartfarm-new/getFarm.php?isAdd=true';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     //print('response==>$response');

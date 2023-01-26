@@ -94,7 +94,7 @@ class _bug extends State<bug> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_bug.php?isAdd=true&bug_id=$bug_id&bug_name=$bug_name&farm_id=$farm_id';
+        'http://localhost/api_smartfarm-new/insert_bug.php?isAdd=true&bug_id=$bug_id&bug_name=$bug_name&farm_id=$farm_id';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

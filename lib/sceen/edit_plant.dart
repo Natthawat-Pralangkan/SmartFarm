@@ -183,7 +183,7 @@ class _edit_plantState extends State<edit_plant> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     // farm_id = preferences.getString('farm_id');
     String url =
-        'http://chiangraismartfarm.com//APIsmartfarm/GetEditPlant.php?plant_id=${data_ID}&isAdd=item';
+        'http://localhost/api_smartfarm-new/GetEditPlant.php?plant_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -205,7 +205,7 @@ class _edit_plantState extends State<edit_plant> {
         temp_min = edit6.text,
         plant_id = edit7.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_plant.php?isAdd=true&plant_id=$data_IDa&plant_name=$plant_name&age=$age&ph=$ph&temp_max=$temp_max&temp_min=$temp_min';
+        'http://localhost/api_smartfarm-new/edit_plant.php?isAdd=true&plant_id=$data_IDa&plant_name=$plant_name&age=$age&ph=$ph&temp_max=$temp_max&temp_min=$temp_min';
     await Dio().get(url).then((value) {
       print(url);
       print(value);

@@ -167,7 +167,7 @@ class _farm extends State<Infarm> {
 
   Future<void> CheckUser() async {
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/insert_farm.php?isAdd=true&farm_id=$farm_id&farm_name=$farm_name&address=$address&tumbon=$tumbon&amphur=$amphur&province=$province&email=$email&password=$password&typeuser=$typeuser&lat=$lat&Lng=$Lng';
+        'http://localhost/api_smartfarm-new/insert_farm.php?isAdd=true&farm_id=$farm_id&farm_name=$farm_name&address=$address&tumbon=$tumbon&amphur=$amphur&province=$province&email=$email&password=$password&typeuser=$typeuser&lat=$lat&Lng=$Lng';
     try {
       Response response = await Dio().get(url);
       print(response.toString() == "true");

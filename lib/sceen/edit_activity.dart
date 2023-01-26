@@ -211,7 +211,7 @@ class _edit_activity extends State<edit_activity> {
     activityModel.clear();
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/GetEditactivity.php?activity_id=${data_ID}&isAdd=item';
+        'http://localhost/api_smartfarm-new/GetEditactivity.php?activity_id=${data_ID}&isAdd=item';
     Response response = await Dio().get(url);
     var result = json.decode(response.data);
     setState(() {
@@ -239,7 +239,7 @@ class _edit_activity extends State<edit_activity> {
         solve_by = edit9.text,
         activity_id = edit10.text;
     String url =
-        'http://chiangraismartfarm.com/APIsmartfarm/edit_activity.php?isAdd=true&activity_id=$data_ID&crop_id=$crop_id&work_date=$work_date&work_detail=$work_detail&problem=$problem&cost=$cost&diesease_id=$diesease_id&bug_id=$bug_id&solve_by=$solve_by';
+        'http://localhost/api_smartfarm-new/edit_activity.php?isAdd=true&activity_id=$data_ID&crop_id=$crop_id&work_date=$work_date&work_detail=$work_detail&problem=$problem&cost=$cost&diesease_id=$diesease_id&bug_id=$bug_id&solve_by=$solve_by';
     await Dio().get(url).then((value) {
       print(url);
       print(value);
